@@ -13,6 +13,9 @@
         h1 {
             color: #2C3E50;
         }
+        h2 {
+            color: #2C3E50;
+        }
         .container {
             background-color: #fff;
             padding: 20px;
@@ -52,12 +55,13 @@
 </head>
 <body>
     <h1>Simulação de Financiamento de Veículo</h1>
+    <h2>Olá, seja bem vindo!</h2>
 
     <div class="container">
-        <label for="nome">Olá, seja bem-vindo! Qual o seu nome?</label>
+        <label for="nome">Qual é o seu nome?</label>
         <input type="text" id="nome" class="input-field">
 
-        <label for="carro">Qual carro você quer financiar? (Somente nome do carro)</label>
+        <label for="carro">Qual veículo você quer financiar? (Somente o nome)</label>
         <input type="text" id="carro" class="input-field">
 
         <label for="valor_veiculo">Qual o valor desse veículo? (Somente números, exemplo: 50000)</label>
@@ -103,12 +107,13 @@
             let result = document.getElementById("result");
             result.style.display = "block";
             result.innerHTML = `<strong>Simulação de Financiamento de Veículo para ${nome}</strong><br>`;
-            result.innerHTML += `Carro: ${carro}<br>`;
+            result.innerHTML += `Veículo: ${carro}<br>`;
             result.innerHTML += `Valor do Veículo: R$${valorVeiculo.toFixed(2)}<br>`;
             result.innerHTML += `Valor da Entrada: R$${valorEntrada.toFixed(2)}<br>`;
             result.innerHTML += `Valor Financiado: R$${valorFinanciado.toFixed(2)}<br>`;
             result.innerHTML += `Taxa de Juros a.a.: ${(taxaJurosAno * 100).toFixed(2)}%<br>`;
-
+            result.innerHTML += "<br>"; // Quebra de linha adicional
+            
             if (parcelasInput.toLowerCase() === "todas") {
                 // Exibindo todas as opções de parcelas
                 result.innerHTML += "<strong>Simulação de Parcelas:</strong><br>";
